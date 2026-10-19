@@ -70,7 +70,9 @@
     "test:heap-leak": "node --expose-gc ./node_modules/vitest/vitest.mjs run test/leaks/heap-snapshot.test.ts --pool=threads",
     "size": "size-limit",
     "api:check": "api-extractor run --config api-extractor.json && api-extractor run --config api-extractor-evm.json && api-extractor run --config api-extractor-stellar.json && api-extractor run --config api-extractor-solana.json && api-extractor run --config api-extractor-ckb.json && api-extractor run --config api-extractor-vault.json",
-    "pack:check": "node scripts/release/verify-pack.mjs"
+    "pack:check": "node scripts/release/verify-pack.mjs",
+    "audit": "pnpm audit",
+    "audit:ci": "node scripts/security-audit.mjs"
   },
   "size-limit": [
     {
@@ -180,6 +182,6 @@
     "tsup": "^8.4.0",
     "typedoc": "^0.28.19",
     "typescript": "^5.7.0",
-    "vitest": "^3.1.0"
+    "vitest": "^3.2.6"
   }
 }
